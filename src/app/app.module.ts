@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {ImageGalleryModule} from "./modules/image-gallery/image-gallery.module";
+import {GalleryConfig} from "./modules/image-gallery/token";
 
 @NgModule({
   declarations: [
@@ -10,9 +12,14 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ImageGalleryModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:GalleryConfig,useValue:3
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
